@@ -1,0 +1,27 @@
+{
+  "name": "insales-javascript-snippets",
+  "main": "./lib/insales-javascript-snippets",
+  "version": "0.1.0",
+  "description": "insales snippets for javascript",
+  "keywords": [
+    "javascript",
+    "insales"
+  ],
+  "activationCommands": {
+    "atom-workspace": "insales-javascript-snippets:toggle"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VladimirIvanin/insales-javascript-snippets.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  },
+  "dependencies": {},
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/VladimirIvanin/insales-javascript-snippets/issues"
+  },
+  "homepage": "https://github.com/VladimirIvanin/insales-javascript-snippets#readme"
+}

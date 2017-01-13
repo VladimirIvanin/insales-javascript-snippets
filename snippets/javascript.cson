@@ -1,0 +1,46 @@
+'.js':
+  'EventBus.subscribe':
+    'prefix': 'eventbs'
+    'body': """
+    EventBus.subscribe('${1}', function (data) {
+      ${2}
+    });
+    """
+
+
+  'EventBus.publish':
+    'prefix': 'eventbp'
+    'body': """
+    EventBus.publish('${1}', '${2}');
+    """
+
+  'EventBus.logger.add':
+    'prefix': 'eventbla'
+    'body': """
+    EventBus.logger.add('${1}')
+    """
+
+  'add_items:insales:cart':
+    'prefix': 'eventaddic'
+    'body': """
+    EventBus.subscribe('add_items:insales:cart', function (cart) {
+      ${1}
+    });
+    """
+
+  'Products.setConfig':
+    'prefix': 'prodsetc'
+    'body': """
+    Products.setConfig({
+      initOption: true,
+      filtered: false,
+      showVariants: true,
+      fileUrl: fileUrl || {},
+      useMax: false,
+      decimal: {
+        kgm: 1,
+        dmt: 1
+      },
+      options: {}
+    });
+    """
