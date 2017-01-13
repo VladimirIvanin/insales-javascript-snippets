@@ -1,7 +1,7 @@
 {
   "name": "insales-javascript-snippets",
   "main": "./lib/insales-javascript-snippets",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "insales snippets for javascript",
   "keywords": [
     "javascript",
