@@ -1,2 +1,2 @@
-# insales-javascript-snippets
-insales javascript snippets
+
+Atom InSales snippets for javascript. 
