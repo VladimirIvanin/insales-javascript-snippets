@@ -1,0 +1,17 @@
+'.js, .source.js.liquid, .js.liquid':
+  'window load':
+    'prefix': 'winload'
+    'body': """
+    $(window).on('load', function(event) {
+      ${1}
+    });
+    """
+
+  'document click':
+    'prefix': 'documentclick'
+    'body': """
+      $(document).on('click', '${1}', function(event) {
+        event.preventDefault();
+        ${2}
+      });
+    """

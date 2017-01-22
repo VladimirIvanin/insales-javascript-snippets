@@ -1,0 +1,24 @@
+'.js, .source.js.liquid, .js.liquid':
+  'Shop.money.format':
+    'prefix': 'shopmoneyf'
+    'body': """
+    Shop.money.format(${1});
+    """
+
+  'Shop.sendMessage':
+    'prefix': 'shopsendm'
+    'body': """
+    Shop.sendMessage({
+      'from': '${1}',
+      'name': '${2}',
+      'subject': '${3}',
+      'content': '${4}',
+      'phone': '${5}'
+    })
+     .done(function (onDone) {
+        ${6}
+      })
+     .fail(function (onFail) {
+        ${7}
+      });
+    """

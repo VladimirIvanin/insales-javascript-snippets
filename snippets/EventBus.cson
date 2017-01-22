@@ -1,0 +1,78 @@
+'.js, .source.js.liquid, .js.liquid':
+  'EventBus.subscribe':
+    'prefix': 'eventbuss'
+    'body': """
+    EventBus.subscribe('${1}', function (data) {
+      ${2}
+    });
+    """
+
+  'EventBus.publish':
+    'prefix': 'eventbusp'
+    'body': """
+    EventBus.publish('${1}', '${2}');
+    """
+
+  'EventBus.logger.add':
+    'prefix': 'evbla'
+    'body': """
+    EventBus.logger.add('${1}')
+    """
+
+  'add_items:cart':
+    'prefix': 'evaddic'
+    'body': """
+    EventBus.subscribe('add_items:insales:cart', function (cart) {
+      ${1}
+    });
+    """
+
+  'update_items:cart':
+    'prefix': 'evuic'
+    'body': """
+    EventBus.subscribe('update_items:insales:cart', function (cart) {
+      ${1}
+    });
+    """
+
+
+  'before:cart':
+    'prefix': 'evbc'
+    'body': """
+    EventBus.subscribe('before:insales:cart', function (cart) {
+      ${1}
+    });
+    """
+
+
+  'always:cart':
+    'prefix': 'evac'
+    'body': """
+    EventBus.subscribe('always:insales:cart', function (cart) {
+      ${1}
+    });
+    """
+
+  'update_variant:product':
+    'prefix': 'evuvp'
+    'body': """
+    EventBus.subscribe('update_variant:insales:product', function (data) {
+      ${1}
+    });
+    """
+
+  'before:product':
+    'prefix': 'evbefprod'
+    'body': """
+    EventBus.subscribe('before:insales:product', function (data) {
+      ${1}
+    });
+    """
+
+  'always:product':
+    'prefix': 'evalwprod'
+    'body': """
+    EventBus.subscribe('always:insales:product', function (data) {
+      ${1}
+    });
+    """

@@ -6,121 +6,26 @@
     """
 
 '.js, .source.js.liquid, .js.liquid':
-  'EventBus.subscribe':
-    'prefix': 'eventbuss'
+  'setTimeout':
+    'prefix': 'setTimeout'
     'body': """
-    EventBus.subscribe('${1}', function (data) {
-      ${2}
-    });
-    """
-
-  'EventBus.publish':
-    'prefix': 'eventbusp'
-    'body': """
-    EventBus.publish('${1}', '${2}');
-    """
-
-  'EventBus.logger.add':
-    'prefix': 'evbla'
-    'body': """
-    EventBus.logger.add('${1}')
-    """
-
-  'add_items:cart':
-    'prefix': 'evaddic'
-    'body': """
-    EventBus.subscribe('add_items:insales:cart', function (cart) {
+    setTimeout(function () {
       ${1}
-    });
+    }, 1000)
     """
 
-  'update_items:cart':
-    'prefix': 'evuic'
+  'return result':
+    'prefix': 'funreturn'
     'body': """
-    EventBus.subscribe('update_items:insales:cart', function (cart) {
-      ${1}
-    });
+    function ${1:functionName}(${2:param}) {
+      var result${3};
+      ${4}
+      return result;
+    }
     """
 
-
-  'before:cart':
-    'prefix': 'evbc'
+  'var self = this':
+    'prefix': 'varselfthis'
     'body': """
-    EventBus.subscribe('before:insales:cart', function (cart) {
-      ${1}
-    });
-    """
-
-
-  'always:cart':
-    'prefix': 'evac'
-    'body': """
-    EventBus.subscribe('always:insales:cart', function (cart) {
-      ${1}
-    });
-    """
-
-  'update_variant:product':
-    'prefix': 'evuvp'
-    'body': """
-    EventBus.subscribe('update_variant:insales:product', function (data) {
-      ${1}
-    });
-    """
-
-  'before:product':
-    'prefix': 'evbefprod'
-    'body': """
-    EventBus.subscribe('before:insales:product', function (data) {
-      ${1}
-    });
-    """
-
-  'always:product':
-    'prefix': 'evalwprod'
-    'body': """
-    EventBus.subscribe('always:insales:product', function (data) {
-      ${1}
-    });
-    """
-
-  'Shop.money.format':
-    'prefix': 'shopmoneyf'
-    'body': """
-    Shop.money.format(${1});
-    """
-
-  'Shop.sendMessage':
-    'prefix': 'shopsendm'
-    'body': """
-    Shop.sendMessage({
-      'from': '${1}',
-      'name': '${2}',
-      'subject': '${3}',
-      'content': '${4}',
-      'phone': '${5}'
-    })
-     .done(function (onDone) {
-        ${6}
-      })
-     .fail(function (onFail) {
-        ${7}
-      });
-    """
-
-  'Products.setConfig':
-    'prefix': 'prodsetc'
-    'body': """
-    Products.setConfig({
-      initOption: true,
-      filtered: false,
-      showVariants: true,
-      fileUrl: fileUrl || {},
-      useMax: false,
-      decimal: {
-        kgm: 1,
-        dmt: 1
-      },
-      options: {}
-    });
+    var self = this;
     """

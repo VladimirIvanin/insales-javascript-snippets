@@ -1,0 +1,17 @@
+'.js, .source.js.liquid, .js.liquid':
+  'Products.setConfig':
+    'prefix': 'prodsetc'
+    'body': """
+    Products.setConfig({
+      initOption: true,
+      filtered: false,
+      showVariants: true,
+      fileUrl: fileUrl || {},
+      useMax: false,
+      decimal: {
+        kgm: 1,
+        dmt: 1
+      },
+      options: {}
+    });
+    """

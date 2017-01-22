@@ -1,0 +1,22 @@
+'.js, .source.js.liquid, .js.liquid':
+  'cart_items add':
+    'prefix': 'cartitemsadd'
+    'body': """
+    $.post('/cart_items.json', {
+      variant_id: ${1:104490412},
+      quantity: 1,
+      comment: "test comment"
+    })
+    .done(function (cart) {
+      console.log(cart);
+    })
+    """
+
+  'products_by_id':
+    'prefix': 'products_by_id'
+    'body': """
+    $.post('/products_by_id/${1:104490412},${2:104490413}.json')
+      .done(function (product) {
+        console.log(product);
+      })
+    """
