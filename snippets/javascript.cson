@@ -29,3 +29,27 @@
     'body': """
     var self = this;
     """
+
+  'window.location.href':
+    'prefix': 'winlochref'
+    'body': """
+    window.location.href
+    """
+
+  'event.preventDefault':
+    'prefix': 'eventprevent'
+    'body': """
+    event.preventDefault();
+    """
+
+  'var jquery selector':
+    'prefix': 'vj'
+    'body': """
+    var $${1} = ${2};
+    """
+
+  'var private':
+    'prefix': 'vp'
+    'body': """
+    var _${1} = ${2};
+    """

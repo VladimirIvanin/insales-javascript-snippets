@@ -15,3 +15,15 @@
         ${2}
       });
     """
+
+  'jquery selector':
+    'prefix': 'sq'
+    'body': """
+    $('${1}');
+    """
+
+  'cookie jQuery':
+    'prefix': 'cookie'
+    'body': """
+    cookie('${1}');$0
+    """

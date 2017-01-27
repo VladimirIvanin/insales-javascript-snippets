@@ -16,3 +16,9 @@
       spaceBetween: 20
     });
     """
+
+  'cookie':
+    'prefix': 'cookiejquery'
+    'body': """
+    $.cookie('${1}');
+    """

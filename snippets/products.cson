@@ -15,3 +15,27 @@
       options: {}
     });
     """
+
+  'Products.get':
+    'prefix': 'productsget'
+    'body': """
+    Products.get(${1: 123456})
+      .done(function (_product) {
+        ${2}
+      })
+      fail(function (onFail) {
+        console.log(onFail);
+      });
+    """
+
+  'Products.getList':
+    'prefix': 'productsgetlist'
+    'body': """
+    Products.getList(${1: ['123456', '123455', '1234454']})
+      .done(function (_products) {
+
+      })
+      fail(function (onFail) {
+        console.log(onFail);
+      });
+    """
