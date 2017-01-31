@@ -27,6 +27,22 @@
     });
     """
 
+  'delete_items:insales:cart':
+    'prefix': 'evdelitc'
+    'body': """
+    EventBus.subscribe('delete_items:insales:cart', function (cart) {
+      ${1}
+    });
+    """
+
+  'remove_items:insales:cart':
+    'prefix': 'evremitc'
+    'body': """
+    EventBus.subscribe('remove_items:insales:cart', function (cart) {
+      ${1}
+    });
+    """
+
   'update_items:cart':
     'prefix': 'evuic'
     'body': """
@@ -65,6 +81,14 @@
     'prefix': 'evbefprod'
     'body': """
     EventBus.subscribe('before:insales:product', function (data) {
+      ${1}
+    });
+    """
+
+  'change_quantity:insales:product':
+    'prefix': 'evchangequanprod'
+    'body': """
+    EventBus.subscribe('change_quantity:insales:product', function (data) {
       ${1}
     });
     """

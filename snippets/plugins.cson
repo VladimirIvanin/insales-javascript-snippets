@@ -22,3 +22,35 @@
     'body': """
     $.cookie('${1}');
     """
+
+  'magnificPopup open':
+    'prefix': 'magnificpopupopen'
+    'body': """
+    $.magnificPopup.open({
+      items: {
+        src: '${1}', // can be a HTML string, jQuery object, or CSS selector
+        type: 'inline'
+      }
+    });
+    """
+
+  'magnificPopup close':
+    'prefix': 'magnificpopupclose'
+    'body': """
+    $.magnificPopup.close();
+    """
+
+  'ionRangeSlider':
+    'prefix': 'ionrangeslider'
+    'body': """
+    ionRangeSlider({
+      min: 0,
+      max: 10000,
+      from: 1000,
+      to: 9000,
+      type: 'double',
+      prefix: "$",
+      grid: true,
+      grid_num: 10
+    });
+    """

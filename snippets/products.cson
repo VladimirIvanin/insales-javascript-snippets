@@ -23,7 +23,7 @@
       .done(function (_product) {
         ${2}
       })
-      fail(function (onFail) {
+      .fail(function (onFail) {
         console.log(onFail);
       });
     """
@@ -35,7 +35,7 @@
       .done(function (_products) {
 
       })
-      fail(function (onFail) {
+      .fail(function (onFail) {
         console.log(onFail);
       });
     """

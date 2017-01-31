@@ -22,6 +22,24 @@
     $('${1}');
     """
 
+  'window width':
+    'prefix': 'windowwidth'
+    'body': """
+    $(window).width();
+    """
+
+  'window width':
+    'prefix': 'windowwidth'
+    'body': """
+    $(window).width();
+    """
+
+  'window scrollTop':
+    'prefix': 'windowscrolltop'
+    'body': """
+    $(window).scrollTop();
+    """
+
   'cookie jQuery':
     'prefix': 'cookie'
     'body': """
