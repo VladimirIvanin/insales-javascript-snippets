@@ -42,6 +42,12 @@
     event.preventDefault();
     """
 
+  'event.stopPropagation':
+    'prefix': 'eventstoppropagation'
+    'body': """
+    event.stopPropagation();
+    """
+
   'var jquery selector':
     'prefix': 'vj'
     'body': """
