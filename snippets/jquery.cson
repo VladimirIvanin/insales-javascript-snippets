@@ -28,12 +28,6 @@
     $(window).width();
     """
 
-  'window width':
-    'prefix': 'windowwidth'
-    'body': """
-    $(window).width();
-    """
-
   'window scrollTop':
     'prefix': 'windowscrolltop'
     'body': """
