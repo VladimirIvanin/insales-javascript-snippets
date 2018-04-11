@@ -1,6 +1,6 @@
 '.js, .source.js.liquid, .js.liquid':
-  'swiper js init':
-    'prefix': 'swiper-js'
+  'js swiper init':
+    'prefix': 'sliderswiper-js'
     'body': """
     var ${1:slider} = new Swiper('${2:.js-slider}', {
       slidesPerView: 4,
@@ -17,13 +17,98 @@
     });
     """
 
-  'cookie':
+  'js CartMan':
+    'prefix': 'cartman'
+    'body': """
+    var mainCart = new CartMan({
+      declination: ['товар', 'товара', 'товаров'],
+      hideCartItems: true, // Скрывать поля корзины при удалении? [data-item-id]
+      counterTemplate: '(%c%)', // regexp %c% (%c% - counter)
+      counterTemplateEmpty: null, // regexp %c% (Шаблон для пустой корзины)
+      positionsTemplate: '(%c%)', // regexp %c% (%c% - counter)
+      positionsTemplateEmpty: null, // regexp %c% (Шаблон для пустой корзины)
+      counterItemsText: 'В вашей корзине %c%&nbsp;%w%', // regexp %c%,%w% (%c% - counter, %w% - word)
+      counterItemsTextEmpty: 'В вашей корзине %c%&nbsp;%w%', // regexp %c%,%w% (%c% - counter, %w% - word)
+      counterPositionText: 'В вашей корзине %c%&nbsp;%w%', // regexp %c%,%w% (%c% - counter, %w% - word)
+      counterPositionTextEmpty: 'В вашей корзине %c%&nbsp;%w%', // regexp %c%,%w% (%c% - counter, %w% - word)
+      updateItems: function (cart) {
+        if (cart.order_lines.length == 0) {
+          $('[data-cart-quick]').hide();
+          $('.cart_sidebar').hide();
+          $('.cart-item').hide();
+          $('.cart-empty').removeClass('hide');
+        }
+      }
+    });
+    """
+
+  'js VariantsModifier':
+    'prefix': 'modvariantsinsales'
+    'body': """
+    var myVariants = new VariantsModifier ({
+      templates: {
+        price: '%s%', // %s% - 100 руб
+        oldPrice: '%s%', // %s% - 100 руб
+        emptyOldPrice: '',
+        sku: 'арт. %s%', // %s% - 12345
+        emptySku: '',
+        available: 'Есть в наличии',
+        notAvailable: 'Нет в наличии',
+        quantityEnds: 'Заканчивается',
+        quantityAlot: 'Много',
+        quantityNotAvailable: 'Нет в наличии'
+      },
+      classes: {
+        withOldPrice: 'with-old-price',
+        withoutOldPrice: 'without-old-price',
+        withSku: 'with-sku',
+        withoutSku: 'without-sku',
+        isAvailable: 'is-available',
+        notAvailable: 'not-available',
+        quantityEnds: 'is-quantity-ends',
+        quantityAlot: 'is-quantity-alot',
+        quantityNotAvailable: 'is-quantity-not-available'
+      },
+      quantityEnds: 10, // граница между заканчивается и много
+      thumbSize: 'compact',
+      thumbWrap: '.js-image-variant',
+      initVariantImage: false, // Выбор слайда при инициализации?
+      updateVariantFromSlider: false, // Обновлять вариант при перелистывании слайдов
+      useToggleOldPrice: true, // использовать show/hide на old price?
+      useToggleSku: true, // использовать show/hide на sku?
+      checkQuantityVariant: true, // проверять остаток варианта? Иначе продукта.
+      quantityNull: 'quantityAlot', // Если кол-во не заполнено quantityEnds/quantityAlot/quantityNotAvailable
+      dataParam: { // параметры первого уровня, задаются из дата атрибутов. Например data-quantity-null="quantityNotAvailable"
+        quantityNull: 'quantity-null',
+        quantityEnds: 'quantity-ends',
+        checkQuantytiVariant: 'check-quantity-variant'
+      },
+      updateImage: function (data, $form, $images, first_image, $links) {
+        console.log(data, $form, $images, first_image, $links);
+      },
+      updateVariant: function (data, $form) {
+        console.log(data, $form);
+      }
+    });
+    """
+
+  'js cookie':
     'prefix': 'cookiejquery'
     'body': """
     $.cookie('${1}');
     """
 
-  'magnificPopup open':
+  'js InitSwiper':
+    'prefix': 'initswiper'
+    'body': """
+    var mySliders = InitSwiper('.main-slider', {
+      autoLength: true, // автоматически выставить кол-во слайдов исходя из минимальной ширины карточки
+      minCartWidth: 280, // Минимальная ширина карточки
+      autoResponsive: true // Автоматически расчитать респонсив для слайдера
+    });
+    """
+
+  'js magnificPopup open':
     'prefix': 'magnificpopupopen'
     'body': """
     $.magnificPopup.open({
@@ -34,13 +119,13 @@
     });
     """
 
-  'magnificPopup close':
+  'js magnificPopup close':
     'prefix': 'magnificpopupclose'
     'body': """
     $.magnificPopup.close();
     """
 
-  'ionRangeSlider':
+  'js ionRangeSlider':
     'prefix': 'ionrangeslider'
     'body': """
     ionRangeSlider({

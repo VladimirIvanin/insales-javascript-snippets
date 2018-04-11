@@ -1,15 +1,12 @@
 {
   "name": "insales-javascript-snippets",
-  "version": "0.7.0",
+  "version": "0.6.0",
   "description": "insales snippets for javascript",
   "keywords": [
     "javascript",
     "insales"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/VladimirIvanin/insales-javascript-snippets.git"
-  },
+  "repository": "ssh://git@github.com/VladimirIvanin/insales-javascript-snippets",
   "license": "MIT",
   "engines": {
     "atom": ">=0.174.0 <2.0.0"
